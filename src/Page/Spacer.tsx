@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Cover.module.css';
+import styles from './Spacer.module.css';
 
 interface Spacer {
   handleClick(): void;

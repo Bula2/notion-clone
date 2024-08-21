@@ -1,10 +1,10 @@
 import React from 'react';
-import { Cover } from './Page/Cover';
+import { Page } from './Page/Page';
 
 const App: React.FC = () => {
   return (
     <>
-      <Cover />
+      <Page />
     </>
   );
 };
