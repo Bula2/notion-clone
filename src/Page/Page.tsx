@@ -30,7 +30,6 @@ export const Page = () => {
     const newNodes = [...nodes];
     newNodes[index].value = value;
     setNodes(newNodes);
-    console.log(1)
   };
 
   return (
