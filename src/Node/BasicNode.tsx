@@ -8,15 +8,13 @@ import { NodeData } from '../utils/types';
 import { nanoid } from 'nanoid';
 
 import styles from './Node.module.css';
+import { useAppState } from '../state/AppStateContext';
 
 interface BasicNode {
   node: NodeData;
   updateFocusedIndex(index: number): void;
   isFocused: boolean;
   index: number;
-  addNode(node: NodeData, index: number): void;
-  removeNodeByIndex(index: number): void;
-  changeNodeValue(index: number, value: string): void;
 }
 
 export const BasicNode: React.FC<BasicNode> = ({
@@ -24,10 +22,8 @@ export const BasicNode: React.FC<BasicNode> = ({
   updateFocusedIndex,
   isFocused,
   index,
-  addNode,
-  removeNodeByIndex,
-  changeNodeValue,
 }) => {
+  const { changeNodeValue, removeNodeByIndex, addNode } = useAppState();
   const nodeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
