@@ -1,11 +1,13 @@
 import { nanoid } from 'nanoid';
 import React from 'react';
-import { BasicNode } from '../Node/BasicNode';
+import { NodeTypeSwitcher } from '../Node/NodeTypeSwitcher';
 import { useAppState } from '../state/AppStateContext';
 import { Cover } from './Cover';
 import { Spacer } from './Spacer';
 import { Title } from './Title';
 import { useFocesedNodeIndex } from './useFocusedNodeIndex';
+
+import styles from './Page.module.css';
 
 export const Page: React.FC = () => {
   const { nodes, title, setTitle, addNode } = useAppState();
@@ -16,10 +18,10 @@ export const Page: React.FC = () => {
   return (
     <>
       <Cover />
-      <div>
+      <div className={styles.body}>
         <Title title={title} changePageTitle={setTitle} addNode={addNode} />
         {nodes.map((node, index) => (
-          <BasicNode
+          <NodeTypeSwitcher
             key={index}
             node={node}
             updateFocusedIndex={setFocusedNodeIndex}
