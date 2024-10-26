@@ -1,6 +1,5 @@
 import { nanoid } from 'nanoid';
 import React from 'react';
-import { NodeTypeSwitcher } from '../Node/NodeTypeSwitcher';
 import { useAppState } from '../state/AppStateContext';
 import { Cover } from './Cover';
 import { Spacer } from './Spacer';
