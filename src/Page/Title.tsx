@@ -15,7 +15,7 @@ export const Title: React.FC<Title> = ({ title, changePageTitle, addNode }) => {
   const headerRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const isFocused = document.activeElement === headerRef.current;
+    const isFocused = document.activeElement == headerRef.current;
     if (!isFocused && headerRef.current) {
       headerRef.current.textContent = title;
     }
@@ -28,18 +28,16 @@ export const Title: React.FC<Title> = ({ title, changePageTitle, addNode }) => {
         ref={headerRef}
         contentEditable
         suppressContentEditableWarning
-        onInput={(event) =>
-          changePageTitle(event.currentTarget.textContent || '')
-        }
+        onInput={(event) => {
+          changePageTitle(event.currentTarget.textContent || '');
+        }}
         onKeyDown={(event) => {
           if (event.key === 'Enter') {
             event.preventDefault();
             addNode({ id: nanoid(), type: 'text', value: 'New Node' }, 0);
           }
         }}
-      >
-        {title}
-      </h1>
+      ></h1>
     </div>
   );
 };
