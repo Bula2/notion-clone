@@ -2,11 +2,8 @@ import React from 'react';
 import { Page } from './Page/Page';
 import { AppStateProvider } from './state/AppStateContext';
 import { Route, Routes } from 'react-router-dom';
-import { createPage } from './utils/createPage';
 import { Auth } from './auth/Auth';
 import { Private } from './auth/Private';
-
-const initialState = createPage();
 
 const App: React.FC = () => {
   return (
@@ -17,7 +14,7 @@ const App: React.FC = () => {
         element={
           <Private
             component={
-              <AppStateProvider initialState={initialState}>
+              <AppStateProvider>
                 <Page />
               </AppStateProvider>
             }
@@ -29,7 +26,7 @@ const App: React.FC = () => {
         element={
           <Private
             component={
-              <AppStateProvider initialState={initialState}>
+              <AppStateProvider>
                 <Page />
               </AppStateProvider>
             }
