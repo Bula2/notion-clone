@@ -2,6 +2,7 @@ import React from 'react';
 import { NodeData, NodeType } from '../utils/types';
 import { BasicNode } from './BasicNode';
 import { PageNode } from './PageNode';
+import { ImageNode } from './ImageNode';
 
 interface NodeTypeSwitcher {
   node: NodeData;
@@ -37,6 +38,10 @@ export const NodeTypeSwitcher: React.FC<NodeTypeSwitcher> = ({
 
   if (node.type === 'page') {
     return <PageNode node={node} index={index} isFocused={isFocused} />;
+  }
+
+  if (node.type === 'image') {
+    return <ImageNode node={node} index={index} isFocused={isFocused} />;
   }
   return null;
 };

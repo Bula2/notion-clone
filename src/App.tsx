@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Auth } from './auth/Auth';
 import { Private } from './auth/Private';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/auth" element={<Auth />} />
@@ -36,5 +36,3 @@ const App: React.FC = () => {
     </Routes>
   );
 };
-
-export default App;

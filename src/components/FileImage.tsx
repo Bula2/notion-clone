@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { Loader } from './Loader';
-import styles from '../utils.module.css';
+import styles from '../utils.module.scss';
 
 type FileImageProps = {
   filePath: string;
