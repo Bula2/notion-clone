@@ -15,7 +15,15 @@ import styles from './Page.module.css';
 import { NodeContainer } from '../Node/NodeContainer';
 
 export const Page: React.FC = () => {
-  const { nodes, title, setTitle, reorderNodes, addNode } = useAppState();
+  const {
+    nodes,
+    title,
+    cover,
+    setCoverImage,
+    setTitle,
+    reorderNodes,
+    addNode,
+  } = useAppState();
   const [focusedNodeIndex, setFocusedNodeIndex] = useFocesedNodeIndex({
     nodes,
   });
@@ -29,7 +37,7 @@ export const Page: React.FC = () => {
 
   return (
     <>
-      <Cover />
+      <Cover filePath={cover} changePageCover={setCoverImage} />
       <div className={styles.body}>
         <Title title={title} changePageTitle={setTitle} addNode={addNode} />
         <DndContext onDragEnd={handleDragEvent}>
